@@ -22,11 +22,11 @@ class AdminsController < ApplicationController
   end
 
   def edit
-    @admin = admin.find(params[:id])
+    @admin = Admin.find(params[:id])
   end
 
   def update
-    @admin = admin.find(params[:id])
+    @admin = Admin.find(params[:id])
 
     if @admin.update(admin_params)
     redirect_to @admin
@@ -36,7 +36,7 @@ class AdminsController < ApplicationController
   end
 
   def destroy
-    @admin = admin.find(params[:id])
+    @admin = Admin.find(params[:id])
     @admin.destroy
 
     redirect_to admins_path
