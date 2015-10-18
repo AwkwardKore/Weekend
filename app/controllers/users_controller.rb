@@ -3,6 +3,8 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  #python -m SimpleHTTPServer 8000
+
   def show
     @user = User.find(params[:id])
     render json: @user
@@ -14,13 +16,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
      redirect_to @user
     else
-     render 'new'
+     render
     end
-
+    render json: @user
   end
 
   def edit
