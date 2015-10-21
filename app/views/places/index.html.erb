@@ -9,6 +9,7 @@
       <th>Location</th>
       <th>Schedule</th>
       <th>Description</th>
+      <th>Mood_id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,7 +21,7 @@
         <td><%= place.location %></td>
         <td><%= place.schedule %></td>
         <td><%= place.description %></td>
-
+        <td><%= place.mood.name %></td>
         <td><%= link_to 'Show', place %></td>
         <td><%= link_to 'Edit', edit_place_path(place) %></td>
         <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>

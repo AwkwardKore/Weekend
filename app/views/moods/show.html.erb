@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>ID
+  <h4><%= @mood.id %></h4>
+</p>
+<p>name
+  <h4><%= @mood.name %></h4>
+</p>
+
+
+<%= link_to 'Edit', edit_mood_path(@mood) %> |
+<%= link_to 'Back', moods_path %>
