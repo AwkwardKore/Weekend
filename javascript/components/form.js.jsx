@@ -10,7 +10,7 @@ var Form = React.createClass({
       url: "http://localhost:3000/users/new",
       contentType: false,
       processData: false,
-      type: "POST",
+      datatype: "json",
       data: this.sendMessage(),
       success: function(data) {
         this.setState({data: data});
