@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render json: @user
   end
 
   def new
@@ -19,9 +18,8 @@ class UsersController < ApplicationController
     if @user.save
      redirect_to @user
     else
-     render
+      render 'new'
     end
-    render json: @user
   end
 
   def edit
