@@ -3,8 +3,6 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  #python -m SimpleHTTPServer 8000
-
   def show
     @user = User.find(params[:id])
     render json: @user
@@ -21,7 +19,6 @@ class UsersController < ApplicationController
     else
      render
     end
-    render json: @user
   end
 
   def edit
