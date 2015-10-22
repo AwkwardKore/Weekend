@@ -34,6 +34,11 @@
     <%= f.select :mood_id, mood_id_select,{:prompt => ""} %>
   </div>
 
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.text_field :category_id %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
