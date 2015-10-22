@@ -36,7 +36,7 @@ class MoodsController < ApplicationController
     end
 
     def destroy
-      @mood = mood.find(params[:id])
+      @mood = Mood.find(params[:id])
       @mood.destroy
 
       redirect_to moods_path

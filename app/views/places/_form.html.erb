@@ -36,7 +36,7 @@
 
   <div class="field">
     <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
+    <%= f.select :category_id, category_id_select,{:prompt => ""} %>
   </div>
 
   <div class="actions">
