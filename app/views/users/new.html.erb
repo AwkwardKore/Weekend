@@ -41,7 +41,7 @@
                       <input class="form-control floating-label" ref="user" type="text" placeholder="User"></input>
                     </div>
                     <div class="form-group form-group-material-red">
-                      <input class="form-control floating-label" ref="pwd" type="text" placeholder="Password"></input>
+                      <input class="form-control floating-label" ref="password" type="text" placeholder="Password"></input>
                     </div>
                     <div class="form-group form-group-material-red">
                       <input class="form-control floating-label" ref="mail" type="text" placeholder="Mail"></input>
@@ -78,9 +78,15 @@
                 </div>
 
                 <div class="field">
-                  <%= f.label :pwd %><br>
-                  <%= f.password_field :pwd %>
+                  <%= f.label :password %><br>
+                  <%= f.password_field :password %>
                 </div>
+
+                <div class="field">
+                  <%= f.label :password_confirmation %><br>
+                  <%= f.password_field :password_confirmation %>
+                </div>
+
 
                 <div class="field">
                   <%= f.label :mail %><br>
