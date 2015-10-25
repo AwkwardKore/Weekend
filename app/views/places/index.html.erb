@@ -18,9 +18,12 @@
 
   <tbody>
     <% @places.each do |place| %>
+
+
+
       <tr>
         <td><%= place.name %></td>
-        <td><%= place.image %></td>
+        <td><%= image_tag(place.image, class:"img-responsive") if place.image.present? %></td>
         <td><%= place.location %></td>
         <td><%= place.schedule %></td>
         <td><%= place.description %></td>
