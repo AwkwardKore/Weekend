@@ -15,6 +15,13 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+    <%= f.file_field :image, :class => 'form-control'%>  
+  </div>
+
   <div class="field">
     <%= f.label :location %><br>
     <%= f.text_field :location %>
@@ -38,6 +45,7 @@
     <%= f.label :category_id %><br>
     <%= f.select :category_id, category_id_select,{:prompt => ""} %>
   </div>
+
 
   <div class="actions">
     <%= f.submit %>

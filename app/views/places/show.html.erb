@@ -5,6 +5,11 @@
 </p>location
 
 <p>
+  <%= @place.image %>
+  <%= image_tag(@place.image, class:"img-responsive") if @place.image.present? %>
+</p>
+
+<p>
   <%= @place.location %>
 </p>
 
