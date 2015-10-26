@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Places</h1>
-
+<!--
 <table>
   <thead>
     <tr>
@@ -18,12 +18,9 @@
 
   <tbody>
     <% @places.each do |place| %>
-
-
-
       <tr>
         <td><%= place.name %></td>
-        <td><%= image_tag(place.image, class:"img-responsive") if place.image.present? %></td>
+        <td><%= image_tag(place.image, class:"imagenmini") if place.image.present? %></td>
         <td><%= place.location %></td>
         <td><%= place.schedule %></td>
         <td><%= place.description %></td>
@@ -36,7 +33,15 @@
     <% end %>
   </tbody>
 </table>
+-->
 
+<% @places.each do |place| %>
+  <div class="lugares">
+    <%= link_to image_tag(place.image, class:"imagenmini", :border => 0), place %>
+    <p><%= place.name %></p>
+
+  </div>
+<% end %>
 <br>
 
 <%= link_to 'New place', new_place_path %>
