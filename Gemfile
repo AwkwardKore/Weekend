@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem "cancan"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
@@ -34,6 +34,12 @@ gem 'carrierwave'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Use bootstrap-sass
+gem 'bootstrap-sass', '~>3.3.5'
+
+# Use material design for bootstrap
+gem 'bootstrap-material-design'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

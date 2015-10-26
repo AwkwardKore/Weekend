@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="jumbotron col-md-6 col-md-offset-3">
+
+    <%= form_for(@user) do |f| %>
+
+    <div class="field form-group">
+      <%= f.text_field :name , class: 'form-control text-center',
+      placeholder: 'Name' %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.text_field :user , class: 'form-control text-center',
+      placeholder: 'User' %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.text_field :pwd , class: 'form-control text-center',
+      placeholder: 'Password' %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.text_field :mail , class: 'form-control text-center',
+      placeholder: 'Email'%>
+    </div>
+
+    <div class="actions text-center">
+      <%= f.submit :class => 'btn btn-success'%>
+    </div>
+
+    <% end %>
+  </div>
+</div>
