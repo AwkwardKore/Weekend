@@ -1,53 +1,60 @@
-<%= form_for(@place) do |f| %>
-  <% if @place.errors.any? %>
+<div class="row">
+  <div class="jumbotron col-md-offset-3 col-md-6">
+
+    <%= form_for(@place) do |f| %>
+    <% if @place.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
 
       <ul>
-      <% @place.errors.full_messages.each do |message| %>
+        <% @place.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
+    <div class="field form-group">
+      <%= f.text_field :name, class: "form-control", autocomplete: "off",
+      placeholder: "Name"%>
+    </div>
 
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
-    <%= f.file_field :image, :class => 'form-control'%>
-  </div>
+    <div id="file_path" class="field form-group">
+      <div class="form-control-wrapper fileinput">
+        <%= f.text_field :image, readonly: "", class: "form-control",
+        placeholder: "Browse..."%>
+        <%= f.file_field :image, multiple: "", ref: "file_path", class: "control-label"%>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </div>
+    <div class="field form-group">
+      <%= f.text_field :location , class: "form-control", autocomplete: "off",
+      placeholder: "Location"%>
+    </div>
 
-  <div class="field">
-    <%= f.label :schedule %><br>
-    <%= f.text_field :schedule %>
-  </div>
+    <div class="field form-group">
+      <%= f.text_field :schedule , class: "form-control", autocomplete: "off",
+      placeholder: "Schedule"%>
+    </div>
 
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :mood_id %><br>
-    <%= f.select :mood_id, mood_id_select,{:prompt => ""} %>
-  </div>
+    <div class="field form-group">
+      <%= f.text_field :description, class: "form-control", autocomplete: "off",
+      placeholder: "Description"%>
+    </div>
+    <div class="field">
+      <%= f.label :mood_id %><br>
+      <%= f.select :mood_id, mood_id_select,{:prompt => ""} %>
+    </div>
 
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.select :category_id, category_id_select,{:prompt => ""} %>
-  </div>
+    <div class="field">
+      <%= f.label :category_id %><br>
+      <%= f.select :category_id, category_id_select,{:prompt => ""} %>
+    </div>
 
 
-  <div class="actions">
-    <%= f.submit %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
