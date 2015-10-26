@@ -45,4 +45,13 @@ ActiveRecord::Schema.define(version: 20151025225713) do
     t.string   "image"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "user"
+    t.string   "pwd"
+    t.string   "mail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
