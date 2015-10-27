@@ -1,42 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <h4 class="col-md-6 col-md-offset-3"><%= @place.name %></h4>
-</p>
-
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+    <%= link_to 'Back', places_path , class: "mdi-navigation-arrow-back"%>
     <div class="jumbotron">
 
-<p>
-  <!--
-  <%= @place.image %>
--->
-  <%= image_tag(@place.image, style: "width: 100px;height:100px",class:"img-responsive") if @place.image.present? %>
-</p>
+      <p>
+        <h4><%= @place.name %></h4>
+      </p>
 
-<p>
-  <%= @place.location %>
-</p>
+      <p>
+        <!--
+        <%= @place.image %>
+      -->
+      <%= image_tag(@place.image, style: "width: 100px;height:100px",class:"img-responsive") if @place.image.present? %>
+      </p>
 
-<p>
-  <%= @place.schedule %>
-</p>
+      <p>
+        <%= @place.location %>
+      </p>
 
-<p>Description:
-  <%= @place.description %>
-</p>
+      <p>
+        <%= @place.schedule %>
+      </p>
 
-<p>Mood:
-  <%= @place.mood.name %>
-</p>
+      <p>Description:
+        <%= @place.description %>
+      </p>
 
-<p>Category:
-  <%= @place.category.name %>
-</p>
+      <p>Mood:
+        <%= @place.mood.name %>
+      </p>
 
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
-</div>
-</div>
+      <p>Category:
+        <%= @place.category.name %>
+      </p>
+
+      <%= link_to 'Edit', edit_place_path(@place), class:"mdi-editor-mode-edit" %>
+    </div>
+  </div>
 </div>
