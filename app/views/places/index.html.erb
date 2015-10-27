@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<!--
 <%= render 'layouts/categorybar' %>
-
+-->
 <h1>Places</h1>
 <!--
 <table>
@@ -39,11 +39,15 @@
 
 <% @places.each do |place| %>
   <div class="lugares">
-    <%= link_to image_tag(place.image, class: "imagenmini", :border => 0), place %>
-    <p><%= place.name %></p>
-
+      <div class="col-md-2">
+        <div class="jumbotron">
+          <%= link_to image_tag(place.image, style: "width: 100px;height:100px",class: "imagenmini", :border => 0), place %>
+          <p><%= place.name %></p>
+        </div>
+      </div>
   </div>
 <% end %>
 <br>
-
+<!--
 <%= link_to 'New place', new_place_path %>
+-->
