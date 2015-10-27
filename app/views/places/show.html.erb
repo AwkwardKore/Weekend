@@ -1,33 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<p>name
-  <h4><%= @place.name %></h4>
-</p>location
+<p>
+  <h4 class="col-md-6 col-md-offset-3"><%= @place.name %></h4>
+</p>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="jumbotron">
 
 <p>
+  <!--
   <%= @place.image %>
-  <%= image_tag(@place.image, class:"img-responsive") if @place.image.present? %>
+-->
+  <%= image_tag(@place.image, style: "width: 100px;height:100px",class:"img-responsive") if @place.image.present? %>
 </p>
 
 <p>
   <%= @place.location %>
 </p>
 
-<p>schedule
+<p>
   <%= @place.schedule %>
 </p>
 
-<p>description
+<p>Description:
   <%= @place.description %>
 </p>
 
-<p>mood_id
+<p>Mood:
   <%= @place.mood.name %>
 </p>
 
-<p>category_id
+<p>Category:
   <%= @place.category.name %>
 </p>
 
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>
+</div>
+</div>
+</div>
