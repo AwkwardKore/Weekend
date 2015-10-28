@@ -15,37 +15,49 @@
     <% end %>
 
     <div class="field form-group">
-      <%= f.text_field :name, class: "form-control floating-label", autocomplete: "off",
-      placeholder: "Name"%>
+      <div class="form-control-wrapper">
+        <%= f.text_field :name, class: "form-control", autocomplete: "off",
+        pattern: ".+", "required placeholder": "Name"%>
+        <label>Name</label>
+      </div>
     </div>
 
     <div class="field form-group">
-      <div class="form-control-wrapper fileinput">
-        <%= f.text_field :image, readonly: "", class: "form-control",
-        placeholder: "Browse..."%>
+      <div class="form-control-wrapper">
+        <input type="text" readonly="" class="form-control", pattern=".+"
+        required placeholder="Browse...">
         <%= f.file_field :image, class: "control-label"%>
       </div>
     </div>
 
     <div class="field form-group">
-      <%= f.text_field :location , class: "form-control", autocomplete: "off",
-      placeholder: "Location"%>
+      <div class="form-control-wrapper">
+        <%= f.text_field :location , class: "form-control", autocomplete: "off",
+        pattern: ".+", "required placeholder": "Location"%>
+        <label>Location</label>
+      </div>
     </div>
 
     <div class="field form-group">
-      <%= f.text_field :schedule , class: "form-control", autocomplete: "off",
-      placeholder: "Schedule"%>
+      <div class="form-control-wrapper">
+        <%= f.text_field :schedule , class: "form-control", autocomplete: "off",
+        pattern: ".+", "required placeholder": "Schedule"%>
+        <label>Schedule</label>
+      </div>
     </div>
 
     <div class="field form-group">
-      <%= f.text_field :description, class: "form-control", autocomplete: "off",
-      placeholder: "Description"%>
+      <div class="form-control-wrapper">
+        <%= f.text_field :description, class: "form-control", autocomplete: "off",
+        pattern: ".+", "required placeholder": "Description"%>
+        <label>Description</label>
+      </div>
     </div>
 
     <div class="field form-group">
       <div class="row">
         <div class="col-md-2">
-          <%= f.label :mood_id %>
+          <div>Mood</div>
         </div>
         <div class="col-md-9">
           <%= f.select :mood_id, mood_id_select,{:prompt => ""}, class: "form-control" %>
@@ -56,7 +68,7 @@
     <div class="field form-group">
       <div class="row">
         <div class="col-md-2">
-          <%= f.label :category_id %>
+          <div>Category</div>
         </div>
         <div class="col-md-9">
           <%= f.select :category_id, category_id_select,{:prompt => ""}, :class => "form-control" %>
