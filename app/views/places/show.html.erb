@@ -13,7 +13,7 @@
         <!--
         <%= @place.image %>
       -->
-      <%= image_tag(@place.image, style: "width: 100px;height:100px",class:"img-responsive") if @place.image.present? %>
+      <%= image_tag(@place.image, class:"img-responsive") if @place.image.present? %>
       </p>
 
       <p>
