@@ -24,8 +24,9 @@
 
     <div class="field form-group">
       <div class="form-control-wrapper">
-        <input type="text" readonly="" class="form-control", pattern=".+"
+        <input type="text" class="form-control" pattern=".+"
         required placeholder="Browse...">
+        <label>Browse</label>
         <%= f.file_field :image, class: "control-label"%>
       </div>
     </div>
@@ -60,7 +61,7 @@
           <div>Mood</div>
         </div>
         <div class="col-md-9">
-          <%= f.select :mood_id, mood_id_select,{:prompt => ""}, class: "form-control" %>
+          <%= f.select :mood_id, mood_id_select,{}, class: "form-control" %>
         </div>
       </div>
     </div>
@@ -71,7 +72,7 @@
           <div>Category</div>
         </div>
         <div class="col-md-9">
-          <%= f.select :category_id, category_id_select,{:prompt => ""}, :class => "form-control" %>
+          <%= f.select :category_id, category_id_select,{}, :class => "form-control" %>
         </div>
       </div>
     </div>
