@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions_admin/new'
+
   get 'sessions/new'
 
   get 'welcome/index'
@@ -8,6 +10,9 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  get    'login_adm'   => 'sessions_admin#new'
+  post   'login_adm'   => 'sessions_admin#create'
+  delete 'logout_adm'  => 'sessions_admin#destroy'
 
 
 

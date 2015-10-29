@@ -1,0 +1,25 @@
+<head>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+
+<% provide(:title, "User login") %>
+<h1> User login </h1>
+
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+
+<%= form_for(:session, url: login_adm_path) do |f| %>
+  <%= f.label :user %>
+  <%= f.text_field :user, class: 'form-control'%> <br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'form-control' %> <br>
+
+  <%= f.submit "Log in"%>
+
+<% end %>
+
+<p> <%= link_to 'Users', controller: "users", action: "index" %> <p>

@@ -30,3 +30,9 @@
 <br>
 
 <%= link_to 'New admin', new_admin_path %>
+
+<% if logged_in_admin? %>
+  <h1> exito mæ </h1>
+<% else %>
+  <p> <%= link_to "Log in", login_adm_path %> </p>
+<% end %>
