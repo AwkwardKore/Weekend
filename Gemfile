@@ -24,8 +24,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
 
-gem 'bootstrap-sass', '~>3.3.5'
-#gem 'sass-rails', '>= 3.2'
+
+#IMAGENES
+gem 'carrierwave'
+
+>>>>>>> origin/views
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -34,6 +37,12 @@ gem 'bootstrap-sass', '~>3.3.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Use bootstrap-sass
+gem 'bootstrap-sass', '~>3.3.5'
+
+# Use material design for bootstrap
+gem 'bootstrap-material-design'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

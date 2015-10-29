@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-#
-  #python -m SimpleHTTPServer 8000
 
   def show
     @user = User.find(params[:id])

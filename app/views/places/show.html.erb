@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= link_to 'Back', places_path , class: "mdi-navigation-arrow-back"%>
+    <div class="jumbotron">
+
+      <p>
+        <h4><%= @place.name %></h4>
+      </p>
+
+      <p>
+        <!--
+        <%= @place.image %>
+      -->
+      <%= image_tag(@place.image, class:"img-responsive") if @place.image.present? %>
+      </p>
+
+      <p>
+        <%= @place.location %>
+      </p>
+
+      <p>
+        <%= @place.schedule %>
+      </p>
+
+      <p>Description:
+        <%= @place.description %>
+      </p>
+
+      <p>Mood:
+        <%= @place.mood.name %>
+      </p>
+
+      <p>Category:
+        <%= @place.category.name %>
+      </p>
+
+      <%= link_to 'Edit', edit_place_path(@place), class:"mdi-editor-mode-edit" %>
+    </div>
+  </div>
+</div>
