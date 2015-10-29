@@ -3,10 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
       log_in user
-      flash[:success] = "Welcome to the Sample App!"
       redirect_to user
     else
       flash.now[:danger] = 'Invalid user/password'
@@ -22,6 +21,6 @@ class SessionsController < ApplicationController
   def user_params
       params.require(:session).permit(:name, :user, :password, :mail,
                                    :password_confirmation)
-    end
+  end
 
 end
