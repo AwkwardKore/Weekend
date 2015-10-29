@@ -27,8 +27,16 @@
 
     <div class="field form-group">
       <div class="form-control-wrapper">
-        <%= f.password_field :pwd , class: "form-control", autocomplete: "off",
+        <%= f.password_field :password , class: "form-control", autocomplete: "off",
         pattern: ".+", "required placeholder": "Password" %>
+        <label>Password</label>
+      </div>
+    </div>
+
+    <div class="field form-group">
+      <div class="form-control-wrapper">
+        <%= f.password_field :password_confirmation , class: "form-control", autocomplete: "off",
+        pattern: ".+", "required placeholder": "Password Confirmation" %>
         <label>Password</label>
       </div>
     </div>

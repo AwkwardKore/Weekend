@@ -11,9 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
-
 ActiveRecord::Schema.define(version: 20151025225713) do
 
   create_table "admins", force: :cascade do |t|
@@ -36,7 +33,6 @@ ActiveRecord::Schema.define(version: 20151025225713) do
     t.datetime "updated_at", null: false
   end
 
-
   create_table "places", force: :cascade do |t|
     t.string   "name"
     t.string   "location"
@@ -44,7 +40,7 @@ ActiveRecord::Schema.define(version: 20151025225713) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "mood_id"
+    t.integer "mood_id"
     t.integer  "category_id"
     t.string   "image"
   end
@@ -59,4 +55,5 @@ ActiveRecord::Schema.define(version: 20151025225713) do
     t.string   "password_digest"
     t.string   "password_confirmation"
   end
+
 end
