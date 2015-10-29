@@ -2,26 +2,21 @@ class SessionsController < ApplicationController
   def new
   end
 
-  def create
-    user = User.new(user_params)
-    if user.save
-      log_in user
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to user
-    else
-      flash.now[:danger] = 'Invalid user/password'
-      render 'new'
+
+    def create
+      user = User.find_by(user: params[:session][:user])
+      if user && user.authenticate(params[:session][:password])
+        log_in user
+        redirect_to user
+      else
+        flash.now[:danger] = 'Invalid email/password combination'
+        render 'new'
+      end
     end
-  end
 
   def destroy
     log_out
     redirect_to root_url
   end
-
-  def user_params
-      params.require(:user).permit(:name, :user, :password, :mail,
-                                   :password_confirmation)
-    end
 
 end
