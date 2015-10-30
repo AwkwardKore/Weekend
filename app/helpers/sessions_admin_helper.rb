@@ -11,4 +11,10 @@ module SessionsAdminHelper
   def logged_in_admin?
     !current_admin.nil?
   end
+
+  def log_out_admin
+   session.delete(:admin_id)
+   @current_admin = nil
+  end
+
 end

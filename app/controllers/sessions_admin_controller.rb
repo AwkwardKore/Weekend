@@ -1,6 +1,8 @@
-class SessionsAdminController < ApplicationController
 
-  helper_method :log_in_admin
+class SessionsAdminController < ApplicationController
+  include SessionsAdminHelper
+
+
 
   def new
   end
@@ -18,5 +20,9 @@ class SessionsAdminController < ApplicationController
    end
 
    def destroy
+     log_out
+     redirect_to root_url
    end
+
+
 end
