@@ -33,6 +33,7 @@
 
 <% if logged_in_admin? %>
   <h1> exito mæ </h1>
+  <%= link_to "Log out", logout_adm_path, method: "delete" %>
 <% else %>
   <p> <%= link_to "Log in", login_adm_path %> </p>
 <% end %>
