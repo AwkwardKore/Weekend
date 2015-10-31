@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'static_pages/home'
-  get 'static_pages/help'
-  get 'static_pages/about'
+  get 'home', to: 'static_pages#home', :as => :home
+  get 'help', to: 'static_pages#help', :as => :help
+  get 'about', to: 'static_pages#about', :as => :about
 
   get 'sessions_admin/new'
   get 'sessions/new'
   get 'welcome/index'
 
-  get 'home' => 'welcome#index'
+  get 'welcome' => 'welcome#index'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
