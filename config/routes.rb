@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'static_pages/home'
+  get 'static_pages/help'
+  get 'static_pages/about'
+
   get 'sessions_admin/new'
-
   get 'sessions/new'
-
   get 'welcome/index'
 
   get 'home' => 'welcome#index'
@@ -14,8 +16,6 @@ Rails.application.routes.draw do
   get    'login_adm'   => 'sessions_admin#new'
   post   'login_adm'   => 'sessions_admin#create'
   delete 'logout_adm'  => 'sessions_admin#destroy'
-
-
 
 
   resources :places
