@@ -20,7 +20,7 @@ class SessionsAdminController < ApplicationController
    end
 
    def destroy
-     log_out
+     log_out_admin
      redirect_to root_url
    end
 
