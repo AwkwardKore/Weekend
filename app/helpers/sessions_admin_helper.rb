@@ -17,4 +17,5 @@ module SessionsAdminHelper
    @current_admin = nil
   end
 
+
 end

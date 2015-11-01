@@ -25,4 +25,9 @@ class SessionsAdminController < ApplicationController
    end
 
 
+     def redirect_to_adminlogin
+       redirect_to new_session_admin_path #(:email => "email@gmail.com")
+     end
+
+
 end

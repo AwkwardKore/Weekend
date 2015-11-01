@@ -1,3 +1,6 @@
+<% if logged_in_admin? %>
+
+
 <p id="notice"><%= notice %></p>
 
 <p>user
@@ -15,3 +18,10 @@
 
 <%= link_to 'Edit', edit_admin_path(@admin) %> |
 <%= link_to 'Back', admins_path %>
+
+<% else %>
+
+<h3>No tiene permiso para ver esta página, favor de acceder como administrador para verla: <%= link_to "Log in", login_adm_path %> </h3>
+<%= link_to "Home", home_path %>
+
+<% end %>
