@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   post   'login_adm'   => 'sessions_admin#create'
   delete 'logout_adm'  => 'sessions_admin#destroy'
 
-
   resources :places
   resources :admins
   resources :moods

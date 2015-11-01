@@ -1,11 +1,12 @@
 <div class="categorybar">
   <table>
     <tr>
-
+      <% @categories.each do |category| %>
       <td>
-        <%= link_to "Hola", :class => 'btn' %>
+        <%= link_to category.name, category %>
       </td>
-
+      <% end %>
     </tr>
   </table>
+
 </div>

@@ -3,7 +3,12 @@ class PlacesController < ApplicationController
   def index
     @places = Place.all
     @categories = Category.all
+    @placo = Place.joins(:category).where('category_id' => [3])
   end
+
+  def show_category
+  end
+
 
   def show
     @place = Place.find(params[:id])

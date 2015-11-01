@@ -1,0 +1,10 @@
+<% @places.each do |place| %>
+  <div>
+      <div class="col-md-2">
+        <div class="jumbotron">
+          <%= link_to image_tag(place.image, class: "mini-image", :border => 0), place %>
+          <p><%= place.name %></p>
+        </div>
+      </div>
+  </div>
+<% end %>

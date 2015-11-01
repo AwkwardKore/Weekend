@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
-<!--
+
 <%= render 'layouts/categorybar' %>
--->
+
 <h1>Places</h1>
 <!--
 <table>
@@ -36,7 +36,7 @@
   </tbody>
 </table>
 -->
-
+<!--
 <% @places.each do |place| %>
   <div>
       <div class="col-md-2">
@@ -47,7 +47,9 @@
       </div>
   </div>
 <% end %>
-<br>
-<!--
-<%= link_to 'New place', new_place_path %>
 -->
+
+<%= render :partial => 'show_category' %>
+<br>
+
+<%= link_to 'New place', new_place_path %>
