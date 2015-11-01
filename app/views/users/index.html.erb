@@ -1,25 +1,35 @@
-<h1> Users </h1>
- <br>
-<% @users.each do |user| %>
-<p>name: <%= user.name %> user: <%= user.user %> password: <%= user.password %>,
-<%= link_to 'Show user', controller: "users", action: "show", id: user.id%> </p>
-<p><%= link_to 'Destroy user', controller: "users", action: "destroy", id:user.id %> </p> <br>
-<% end %>
+<% if logged_in_admin? %>
 
-<p> <%= link_to 'New', controller: "users", action: "new" %> </p>
+  <h1> Users </h1>
+   <br>
+  <% @users.each do |user| %>
+  <p>name: <%= user.name %> user: <%= user.user %> password: <%= user.password %>,
+  <%= link_to 'Show user', controller: "users", action: "show", id: user.id%> </p>
+  <p><%= link_to 'Destroy user', controller: "users", action: "destroy", id:user.id %> </p> <br>
+  <% end %>
 
-<p> <%= link_to 'Home', controller: "welcome", action: "index" %> </p>
+  <p> <%= link_to 'New', controller: "users", action: "new" %> </p>
 
-<p> <%= link_to 'Login', controller: "sessions", action: "new" %> </p>
+  <p> <%= link_to 'Home', controller: "welcome", action: "index" %> </p>
+
+  <p> <%= link_to 'Login', controller: "sessions", action: "new" %> </p>
 
 
-<h3>weas de sesiones </h3>
-<% if logged_in? %>
-  <li><%= link_to "Users", '#' %></li>
-  <li><%= link_to "Profile", current_user %></li>
-  <li><%= link_to "Settings", '#' %></li>
-  <%= link_to "Log out", logout_path, method: "delete" %>
+  <h3>weas de sesiones </h3>
+  <% if logged_in? %>
+    <li><%= link_to "Users", '#' %></li>
+    <li><%= link_to "Profile", current_user %></li>
+    <li><%= link_to "Settings", '#' %></li>
+    <%= link_to "Log out", logout_path, method: "delete" %>
+    <% else %>
+    <li><%= link_to "Log in", login_path %></li>
+
+  <%end%>
+
+
   <% else %>
-  <li><%= link_to "Log in", login_path %></li>
 
-<%end%>
+  <h3>No tiene permiso para ver esta página, favor de acceder como administrador para verla: <%= link_to "Log in", login_adm_path %> </h3>
+  <%= link_to "Home", home_path %>
+
+  <% end %>
