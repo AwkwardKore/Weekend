@@ -23,10 +23,9 @@
     </div>
 
     <div class="field form-group">
-      <div class="form-control-wrapper">
-        <input type="text" class="form-control" pattern=".+"
-        required placeholder="Browse...">
-        <label>Browse</label>
+      <div class="form-control-wrapper fileinput">
+        <%= f.text_field :image, readonly: "", class: "form-control",
+        placeholder: "Browse..."%>
         <%= f.file_field :image, class: "control-label"%>
       </div>
     </div>
