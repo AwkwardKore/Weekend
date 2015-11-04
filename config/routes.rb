@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   resources :places
   resources :admins
   resources :moods
-  resources :categories
+  resources :categories do
+    member do
+      get 'places',to: 'categories#places'
+    end
+  end
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.

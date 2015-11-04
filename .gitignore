@@ -18,3 +18,5 @@
 
 # Ignore OS generated files
 .DS_Store
+
+.ruby-version

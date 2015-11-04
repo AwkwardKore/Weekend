@@ -42,6 +42,10 @@ class CategoriesController < ApplicationController
     redirect_to categorys_path
   end
 
+  def places
+    @places = Category.find(params[:id]).places
+  end
+
   private
   def category_params
     params.require(:category).permit(:name)
