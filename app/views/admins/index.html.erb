@@ -1,3 +1,6 @@
+<% if logged_in_admin? %>
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Admins</h1>
@@ -30,3 +33,16 @@
 <br>
 
 <%= link_to 'New admin', new_admin_path %>
+
+
+<!-- Logout_adm.. es del routes, el method es por rails -->
+<%= link_to "Log out", logout_adm_path, method: "delete" %>
+
+
+<% else %>
+
+<h3>No tiene permiso para ver esta página, favor de acceder como administrador para verla: <%= link_to "Log in", login_adm_path %> </h3>
+<%= link_to "Home", home_path %>
+
+
+<% end %>
