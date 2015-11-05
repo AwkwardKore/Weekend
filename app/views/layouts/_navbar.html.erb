@@ -2,7 +2,7 @@
 <% if logged_in_admin? %>
   <div class="navbar navbar-default">
     <div class="navbar-header">
-      <a class="navbar-brand" href="home"><strong>Weekend - Admin </strong></a>
+      <%= link_to "<strong>Weekend - Admin</strong>".html_safe, :home, :class => "navbar-brand" %>
     </div>
     <%= link_to "Log out", logout_adm_path, method: "delete", style: "color: black;"%>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
@@ -19,13 +19,14 @@
 
 <!-- User-->
 <% elsif logged_in? %>
-<div class="navbar navbar-default">
+<div class="navbar navbar-warning">
   <div class="navbar-header">
-    <a class="navbar-brand" href="home"><strong>Weekend user</strong></a>
+    <%= link_to "<strong>Weekend</strong>".html_safe, :home, :class => "navbar-brand" %>
+
   </div>
 
   <div class="navbar-collapse collapse navbar-responsive-collapse">
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right ">
       <li><button class="active btn btn-default "><i class="mdi-action-account-circle"><%= current_user.name %></i></button></li>
       <li><button class="btn btn-default "><%= link_to '<i class= "mdi-action-highlight-remove"></i>'.html_safe, logout_path, method: "delete", style: "color: black;"%></i></button></li>
     </ul>
@@ -36,10 +37,10 @@
 <% else %>
 <div class="navbar navbar-default">
   <div class="navbar-header">
-    <a class="navbar-brand" href="home"><strong>Weekend none</strong></a>
+  <%= link_to "<strong>Weekend</strong>".html_safe, :home, :class => "navbar-brand" %>
   </div>
-  <div class="navbar-collapse collapse navbar-responsive-collapse">
-    <ul class="nav navbar-nav navbar-right btn-group">
+  <div class="navbar-right">
+    <ul class="nav navbar-nav barra">
       <li><button class="btn btn-default btn-flat btn-link"><%= link_to 'Iniciar sesion' , login_path %></button></li>
       <li><button class="btn btn-default btn-flat btn-link"><%= link_to 'Registrarse' , new_user_path %></button></li>
     </ul>
