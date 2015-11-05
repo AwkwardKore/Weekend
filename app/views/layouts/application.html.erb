@@ -7,60 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if logged_in_admin? %>
-    <div class="navbar navbar-default">
-      <div class="navbar-header">
-        <a class="navbar-brand">Weekend</a>
-      </div>
-      <%= link_to "Log out", logout_adm_path, method: "delete", style: "color: black;"%>
-      <div class="navbar-collapse collapse navbar-responsive-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="javascript:void(0)">Action</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-  <% elsif logged_in?%>
-  <div class="navbar navbar-default">
-    <div class="navbar-header">
-      <a class="navbar-brand">Weekend</a>
-    </div>
-    <%= link_to "Log out", logout_path, method: "delete", style: "color: black;"%>
-    <div class="navbar-collapse collapse navbar-responsive-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="javascript:void(0)">Action</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <% else %>
-  <div class="navbar navbar-default">
-    <div class="navbar-header">
-      <a class="navbar-brand">Weekend</a>
-    </div>
-    <div class="navbar-collapse collapse navbar-responsive-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="javascript:void(0)">Action</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <% end %>
-  <div class="container">
+    <%= render 'layouts/navbar' %> 
     <%= yield %>
   </div>
 </body>

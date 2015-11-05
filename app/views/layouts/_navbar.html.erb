@@ -1,0 +1,48 @@
+<!-- Admin -->
+<% if logged_in_admin? %>
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="home"><strong>Weekend - Admin </strong></a>
+    </div>
+    <%= link_to "Log out", logout_adm_path, method: "delete", style: "color: black;"%>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="javascript:void(0)">Action</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<!-- User-->
+<% elsif logged_in? %>
+<div class="navbar navbar-default">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="home"><strong>Weekend user</strong></a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><button class="active btn btn-default "><i class="mdi-action-account-circle"><%= current_user.name %></i></button></li>
+      <li><button class="btn btn-default "><%= link_to '<i class= "mdi-action-highlight-remove"></i>'.html_safe, logout_path, method: "delete", style: "color: black;"%></i></button></li>
+    </ul>
+  </div>
+</div>
+
+<!-- No user-->
+<% else %>
+<div class="navbar navbar-default">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="home"><strong>Weekend none</strong></a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right btn-group">
+      <li><button class="btn btn-default btn-flat btn-link"><%= link_to 'Iniciar sesion' , login_path %></button></li>
+      <li><button class="btn btn-default btn-flat btn-link"><%= link_to 'Registrarse' , new_user_path %></button></li>
+    </ul>
+  </div>
+</div>
+<% end %>
