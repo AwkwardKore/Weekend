@@ -19,7 +19,11 @@ Rails.application.routes.draw do
 
   resources :places
   resources :admins
-  resources :moods
+  resources :moods do
+    member do
+      get 'places',to: 'moods#places'
+    end
+  end
   resources :categories do
     member do
       get 'places',to: 'categories#places'

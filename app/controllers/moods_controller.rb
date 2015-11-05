@@ -42,6 +42,10 @@ class MoodsController < ApplicationController
       redirect_to moods_path
     end
 
+    def places
+      @places = Mood.find(params[:id]).places
+    end
+
     private
     def mood_params
       params.require(:mood).permit(:name)

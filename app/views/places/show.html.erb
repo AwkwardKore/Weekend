@@ -45,6 +45,52 @@
   </div>
 </div>
 
+<% elsif logged_in? %>
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= link_to 'Back', places_path , class: "mdi-navigation-arrow-back"%>
+    <div class="jumbotron">
+
+      <p>
+        <h4><%= @place.name %></h4>
+      </p>
+
+      <p>
+      <%= image_tag(@place.image, class:"img-responsive") if @place.image.present? %>
+      </p>
+
+      <p>
+        <i class="mdi-maps-my-location"></i>
+        <%= @place.location %>
+      </p>
+
+      <p>
+        <i class="mdi-device-access-time"></i>
+        <%= @place.schedule %>
+      </p>
+
+      <p>
+        <i class="mdi-editor-format-align-left"></i>
+        <%= @place.description %>
+      </p>
+
+      <p>
+        <i class="mdi-social-mood"></i>
+        <%= @place.mood.name %>
+      </p>
+
+      <p>
+        <i class="mdi-image-filter-hdr"></i>
+        <%= @place.category.name %>
+      </p>
+      
+    </div>
+  </div>
+</div>
+
+
 <% else %>
 
 <h3>No tiene permiso para ver esta página, favor de acceder como administrador para verla: <%= link_to "Log in", login_adm_path %> </h3>

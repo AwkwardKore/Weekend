@@ -1,19 +1,39 @@
 <% provide(:title, "Log in") %>
-<h1> User Login </h1>
+<div class="row">
+  <h1 class="col-md-6 col-md-offset-3" style="color: white;">User login</h1>
+</div>
 
-<% flash.each do |message_type, message| %>
-  <div class="alert alert-<%= message_type %>"><%= message %></div>
-<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="jumbotron">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
 
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :user %>
-  <%= f.text_field :user, class: 'form-control'%> <br>
+      <%= form_for(:session, url: login_path) do |f| %>
+        <div class="field form-group">
+          <div class="form-control-wrapper">
+            <%= f.text_field :user, class: "form-control", autocomplete: "off",
+            pattern: ".+", "required placeholder": "User" %>
+            <label tabIndex="-1">User</label>
+          </div>
+        </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %> <br>
+        <div class="field form-group">
+          <div class="form-control-wrapper">
+            <%= f.password_field :password , class: "form-control", autocomplete: "off",
+            pattern: ".+", "required placeholder": "Password" %>
+            <label tabIndex="-1">Password</label>
+          </div>
+        </div>
 
-  <%= f.submit "Log in"%>
+        <div class="actions text-center">
+          <%= f.submit "Login", :class => "btn btn-success"%>
+        </div>
 
-<% end %>
+      <% end %>
 
-<p> <%= link_to 'Users', controller: "users", action: "index" %> <p>
+      <p> <%= link_to 'Users', controller: "users", action: "index" %> <p>
+    </div>
+  </div>
+</div>

@@ -18,9 +18,31 @@
 <% end %>
 <br>
 
+<% elsif logged_in? %>
+<p id="notice"><%= notice %></p>
+
+<h1 style="color: white;">Places</h1>
+
+
+<% @places.each do |place| %>
+  <div>
+      <div class="col-md-2">
+        <div class="jumbotron" style="text-align: center;">
+          <%= link_to image_tag(place.image, class: "mini-image", :border => 0), place %>
+          <p><%= place.name %></p>
+          <%=link_to 'Categories', places_category_path(place.category_id)%><br/>
+          <%=link_to 'Moods', places_mood_path(place.mood_id)%>
+        </div>
+      </div>
+  </div>
+<% end %>
+<br>
+
 <% else %>
 
-<h3>No tiene permiso para ver esta página, favor de acceder como administrador para verla: <%= link_to "Log in", login_adm_path %> </h3>
-<%= link_to "Home", home_path %>
+<div class="alert alert-dismissable alert-danger">
+    <strong>No puedes acceder a esta informacion, favor de iniciar sesion para ver esta pagina:</strong>
+    <%= link_to "Log in", login_path %>
+</div>
 
 <% end %>
