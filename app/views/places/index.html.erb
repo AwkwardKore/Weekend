@@ -1,15 +1,14 @@
 <% if logged_in_admin? %>
 
-
 <p id="notice"><%= notice %></p>
 
-<h1>Places</h1>
+<h1 style="color: white;">Places</h1>
 
 
 <% @places.each do |place| %>
   <div>
       <div class="col-md-2">
-        <div class="jumbotron">
+        <div class="jumbotron" style="text-align: center;">
           <%= link_to image_tag(place.image, class: "mini-image", :border => 0), place %>
           <p><%= place.name %></p>
           <%=link_to 'Test', places_category_path(place.category_id)%>

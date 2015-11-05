@@ -1,5 +1,9 @@
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap-material-design";
 @import "*";
+
+body {
+  background-image: url("background.jpg");
+  background-size: 100%;
+}

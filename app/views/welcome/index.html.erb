@@ -1,5 +1,9 @@
-<h1>Welcome</h1><br>
+<h1 style="color: white;">Welcome</h1>
 
-
-<h3> User login: <%= link_to 'users' , new_user_path %><br> </h3>
-<h3> Admin login: <%= link_to 'admin' , new_admin_path %></h3>
+<div class="row">
+  <div class="jumbotron col-md-offset-3 col-md-6">
+    <h3> User registration: <%= link_to 'users' , new_user_path %><br> </h3>
+    <h3> User login: <%= link_to 'sessions' , login_path %><br> </h3>
+    <h3> Admin login: <%= link_to 'admin' , login_adm_path %></h3>
+  </div>
+</div>

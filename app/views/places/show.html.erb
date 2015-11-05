@@ -12,29 +12,31 @@
       </p>
 
       <p>
-        <!--
-        <%= @place.image %>
-      -->
       <%= image_tag(@place.image, class:"img-responsive") if @place.image.present? %>
       </p>
 
       <p>
+        <i class="mdi-maps-my-location"></i>
         <%= @place.location %>
       </p>
 
       <p>
+        <i class="mdi-device-access-time"></i>
         <%= @place.schedule %>
       </p>
 
-      <p>Description:
+      <p>
+        <i class="mdi-editor-format-align-left"></i>
         <%= @place.description %>
       </p>
 
-      <p>Mood:
+      <p>
+        <i class="mdi-social-mood"></i>
         <%= @place.mood.name %>
       </p>
 
-      <p>Category:
+      <p>
+        <i class="mdi-image-filter-hdr"></i>
         <%= @place.category.name %>
       </p>
 
