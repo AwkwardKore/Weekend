@@ -1,6 +1,6 @@
 <!-- Admin -->
 <% if logged_in_admin? %>
-  <div class="navbar navbar-default">
+  <div class="navbar navbar-material-cyan">
     <div class="navbar-header">
       <%= link_to "<strong>Weekend - Admin</strong>".html_safe, :home, :class => "navbar-brand" %>
     </div>
@@ -19,31 +19,44 @@
 
 <!-- User-->
 <% elsif logged_in? %>
-<div class="navbar navbar-warning">
+<div class="navbar navbar-material-cyan">
   <div class="navbar-header">
     <%= link_to "<strong>Weekend</strong>".html_safe, :home, :class => "navbar-brand" %>
 
   </div>
 
   <div class="navbar-collapse collapse navbar-responsive-collapse">
-    <ul class="nav navbar-nav navbar-right ">
-      <li><button class="active btn btn-default "><i class="mdi-action-account-circle"><%= current_user.name %></i></button></li>
-      <li><button class="btn btn-default "><%= link_to '<i class= "mdi-action-highlight-remove"></i>'.html_safe, logout_path, method: "delete", style: "color: black;"%></i></button></li>
-    </ul>
+    <div class="container">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Nosotros' , :aboutus %></li>
+        <li><%= link_to '|' , "javascript:void(0)"%></li>
+        <li><%= link_to 'Acerca del proyecto', :aboutproject %></li>
+        <li><%= link_to '|' , "javascript:void(0)"%></li>
+        <li><i class="mdi-action-account-circle"></i><%= current_user.name %></li>
+        <li><%= link_to '|' , "javascript:void(0)"%></li>
+        <li><%= link_to '<i class= "mdi-action-highlight-remove"></i>'.html_safe, logout_path, method: "delete", style: "color: black;"%></i></li>
+        <li><%= link_to ' ' , "javascript:void(0)"%></li>
+      </ul>
+    </div>
+
   </div>
 </div>
 
 <!-- No user-->
 <% else %>
-<div class="navbar navbar-default">
+<div class="navbar navbar-material-cyan">
   <div class="navbar-header">
   <%= link_to "<strong>Weekend</strong>".html_safe, :home, :class => "navbar-brand" %>
   </div>
-  <div class="navbar-right">
-    <ul class="nav navbar-nav barra">
-      <li><button class="btn btn-default btn-flat btn-link"><%= link_to 'Iniciar sesion' , login_path %></button></li>
-      <li><button class="btn btn-default btn-flat btn-link"><%= link_to 'Registrarse' , new_user_path %></button></li>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to 'Nosotros' , :aboutus %></li>
+      <li><%= link_to '|' , "javascript:void(0)"%></li>
+      <li><%= link_to 'Acerca del proyecto', :aboutproject %></li>
+      <li><%= link_to '|' , "javascript:void(0)"%></li>
+      <li><%= link_to 'Iniciar sesion' , login_path %></li>
+      <li><%= link_to '|' , "javascript:void(0)"%></li>
+      <li><%= link_to 'Registrarse' , new_user_path %></li>
+      <li><%= link_to ' ' , "javascript:void(0)"%></li>
     </ul>
-  </div>
 </div>
 <% end %>
