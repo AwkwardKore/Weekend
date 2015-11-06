@@ -3,6 +3,7 @@ class PlacesController < ApplicationController
   def index
     @places = Place.all
     @categories = Category.all
+    @favorites = Favorite.all
   end
 
   def show

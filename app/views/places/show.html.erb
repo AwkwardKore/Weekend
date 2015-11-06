@@ -85,7 +85,27 @@
         <i class="mdi-image-filter-hdr"></i>
         <%= @place.category.name %>
       </p>
-      
+      <br>
+      <div class="">
+        <p>
+          Cosa de favorites
+        </p>
+        <%= form_for(current_user.favorites.build(:user_id, @user.id)) do |f| %>
+        <div></div>
+          <%= f.submit "Favorito", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+
+      <div class="">
+        <p>
+          Cosa quita favoritos
+        </p>
+        <%= form_for(current_user.favorites.find_by(place_id: @place.id),
+             html: { method: :delete }) do |f| %>
+             <%= f.submit "Unfollow", class: "btn" %>
+        <% end %>
+      </div>
+
     </div>
   </div>
 </div>
