@@ -32,7 +32,7 @@
         <li><%= link_to '|' , "javascript:void(0)"%></li>
         <li><%= link_to 'Acerca del proyecto', :aboutproject %></li>
         <li><%= link_to '|' , "javascript:void(0)"%></li>
-        <li><i class="mdi-action-account-circle"></i><%= current_user.name %></li>
+        <li class="move"><i class="mdi-action-account-circle"></i><%= current_user.name %></li>
         <li><%= link_to '|' , "javascript:void(0)"%></li>
         <li><%= link_to '<i class= "mdi-action-highlight-remove"></i>'.html_safe, logout_path, method: "delete", style: "color: black;"%></i></li>
         <li><%= link_to ' ' , "javascript:void(0)"%></li>
