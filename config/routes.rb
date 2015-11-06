@@ -20,7 +20,13 @@ Rails.application.routes.draw do
 
 
 
-  resources :places
+  resources :places do
+    member do
+      resources :favorites, only: [:create]
+      delete '/favorites/:favorite_id', to: 'favorites#destroy', as: :favorite
+    end
+    # put :favorite, on: :member
+  end
   resources :admins
   resources :moods do
     member do
@@ -32,7 +38,12 @@ Rails.application.routes.draw do
       get 'places',to: 'categories#places'
     end
   end
-  resources :users
+
+  resources :users do
+    member do
+      get 'places',to: 'users#places'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

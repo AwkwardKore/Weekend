@@ -1,0 +1,17 @@
+<% if logged_in? %>
+<p id="notice"><%= notice %></p>
+
+<h1 style="color: white;">Places</h1>
+
+
+<% @places.each do |place| %>
+  <div>
+      <div class="col-md-2">
+        <div class="jumbotron" style="text-align: center;">
+          <%= link_to image_tag(place.image, class: "mini-image", :border => 0), place %>
+          <p><%= place.name %></p>
+        </div>
+      </div>
+  </div>
+  <% end %>
+<% end %>

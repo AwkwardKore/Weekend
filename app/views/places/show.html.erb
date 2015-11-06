@@ -85,7 +85,13 @@
         <i class="mdi-image-filter-hdr"></i>
         <%= @place.category.name %>
       </p>
-      
+
+      <%= link_to "favorite",   favorites_path(@place), method: :post%>
+      <% if @place.liked_by?(current_user.id)%>
+        <%= link_to "unfavorite", favorite_place_path(@place,
+          current_user.favorite_places.find_by(place_id: @place.id).id), method: :delete %>
+      <% end %>
+
     </div>
   </div>
 </div>
