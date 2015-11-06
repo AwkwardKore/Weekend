@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_secure_password
-  has_many :favorites, class_name:  "Favorite",
-                                  foreign_key: "user_id",
-                                  dependent:   :destroy
+  # has_many :places
+
+  has_many :favorite_places
+  # has_many :favorites, through: :favorite_places
+  has_many :places, through: :favorite_places
+
 end
