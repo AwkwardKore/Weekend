@@ -3,6 +3,7 @@ class PlacesController < ApplicationController
   def index
     @places = Place.all
     @categories = Category.all
+    @moods = Mood.all
   end
 
   def show
@@ -62,7 +63,7 @@ class PlacesController < ApplicationController
 
   private
   def place_params
-    params.require(:place).permit(:name, :image, :location, :schedule, :description, :mood_id, :category_id)
+    params.require(:place).permit(:name, :image, :location, :schedule, :description, :mood_id, :category_id, :tips)
   end
 
   # def favorite_params

@@ -55,6 +55,14 @@
     </div>
 
     <div class="field form-group">
+      <div class="form-control-wrapper">
+        <%= f.text_field :tips, class: "form-control", autocomplete: "off",
+        pattern: ".+", "required placeholder": "Tips"%>
+        <label>Tips</label>
+      </div>
+    </div>
+
+    <div class="field form-group">
       <div class="row">
         <div class="col-md-2">
           <div>Mood</div>

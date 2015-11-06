@@ -25,7 +25,6 @@ Rails.application.routes.draw do
       resources :favorites, only: [:create]
       delete '/favorites/:favorite_id', to: 'favorites#destroy', as: :favorite
     end
-    # put :favorite, on: :member
   end
   resources :admins
   resources :moods do

@@ -4,7 +4,6 @@ class Place < ActiveRecord::Base
   belongs_to :user
 
   has_many :favorite_places
-  # has_many :favorited_by, through: :favorite_places
 
   mount_uploader :image, PlaceUploader
 
