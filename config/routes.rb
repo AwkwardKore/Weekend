@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   get 'welcome/index'
-  get 'home' => 'welcome#index'
+  get 'aboutus', to: 'welcome#aboutus', as: :aboutus
+  get 'aboutproject', to: 'welcome#project', as: :aboutproject
+  get 'weekend', to: 'welcome#hello', as: :hello
+
+  get 'home' => 'welcome#hello'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
@@ -13,7 +17,6 @@ Rails.application.routes.draw do
   get    'login_adm'   => 'sessions_admin#new'
   post   'login_adm'   => 'sessions_admin#create'
   delete 'logout_adm'  => 'sessions_admin#destroy'
-
 
 
 
@@ -35,7 +38,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'welcome#hello'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
