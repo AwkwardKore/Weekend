@@ -1,8 +1,5 @@
-
 class SessionsAdminController < ApplicationController
-  include SessionsAdminHelper
-
-
+  #include SessionsAdminHelper
 
   def new
   end

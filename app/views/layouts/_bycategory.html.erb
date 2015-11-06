@@ -1,0 +1,13 @@
+<div class="">
+  <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        Buscar por categorias: <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <% @categories.each do |category| %>
+        <li><a href="<%= places_category_path(category.id) %>"><%= category.name %></a></li>
+
+        <% end %>
+      </ul>
+    </div>
+</div>
