@@ -36,6 +36,8 @@
         <li><%= link_to '|' , "javascript:void(0)"%></li>
         <li><i class="mdi-action-account-circle"></i><%= current_user.name %></li>
         <li><%= link_to '|' , "javascript:void(0)"%></li>
+        <li><%= link_to 'Favorites', places_user_path(current_user.id)%></li>
+        <li><%= link_to '|' , "javascript:void(0)"%></li>
         <li><%= link_to '<i class= "mdi-action-highlight-remove"></i>'.html_safe, logout_path, method: "delete", style: "color: black;"%></i></li>
         <li><%= link_to ' ' , "javascript:void(0)"%></li>
       </ul>

@@ -41,6 +41,10 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def places
+    @places = User.find(params[:id]).places
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :user, :password, :password_confirmation, :mail)
