@@ -1,0 +1,13 @@
+<div class="">
+  <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        Buscar por sentimiento: <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <% @moods.each do |mood| %>
+        <li><a href="<%= places_mood_path(mood.id) %>"><%= mood.name %></a></li>
+
+        <% end %>
+      </ul>
+    </div>
+</div>
