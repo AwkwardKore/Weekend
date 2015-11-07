@@ -1,6 +1,9 @@
 <% if logged_in? %>
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+  <%= link_to "<button class='btn btn-primary btn-raised'>Volver a lugares</button></p>".html_safe, places_path %>
+</div>
 <h1 style="color: white;">Tus favoritos son: </h1>
 
 
