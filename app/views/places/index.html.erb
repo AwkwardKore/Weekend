@@ -1,3 +1,4 @@
+<% provide(:title, "Lugares") %>
 <% if logged_in_admin? %>
 
 <p id="notice"><%= notice %></p>
@@ -22,7 +23,7 @@
 
 <div class="row">
   <div class="col-md-2">
-    <h1 style="color: white;">Places</h1>
+    <h1 style="color: white;">Lugares</h1>
   </div>
     <div class="jumbotron col-md-6 col-md-offset-4">
       <%= render 'layouts/bycategory' %>

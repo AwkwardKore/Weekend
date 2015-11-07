@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'aboutus', to: 'welcome#aboutus', as: :aboutus
   get 'aboutproject', to: 'welcome#project', as: :aboutproject
   get 'weekend', to: 'welcome#hello', as: :hello
+  get 'bienvenido', to: 'welcome#start', as: :bienvenido
 
   get 'home' => 'welcome#hello'
   get 'login' => 'sessions#new'

@@ -23,23 +23,21 @@
 <% elsif logged_in? %>
 <div class="navbar navbar-material-cyan">
   <div class="navbar-header">
-    <div class="navbar-brand">
-      <%= link_to "#{image_tag('/logoweekend48px.png')} eekend".html_safe, :home %>
-    </div>
+    <%= link_to "#{image_tag('/logoweekend36px.png')}".html_safe,:bienvenido, :class=>"navbar-brand" %>    
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <div class="container">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Nosotros' , :aboutus %></li>
-        <li><%= link_to '|' , "javascript:void(0)"%></li>
+        <li class="text-muted"><%= link_to '|' , "javascript:void(0)"%></li>
         <li><%= link_to 'Acerca del proyecto', :aboutproject %></li>
-        <li><%= link_to '|' , "javascript:void(0)"%></li>
+        <li class="text-muted"><%= link_to '|' , "javascript:void(0)"%></li>
         <li class="move"><i class="mdi-action-account-circle"></i><%= current_user.name %></li>
-        <li><%= link_to '|' , "javascript:void(0)"%></li>
-        <li><%= link_to 'Favorites', places_user_path(current_user.id)%></li>
-        <li><%= link_to '|' , "javascript:void(0)"%></li>
+        <li class="text-muted"><%= link_to '|' , "javascript:void(0)"%></li>
+        <li><%= link_to 'Favoritos', places_user_path(current_user.id)%></li>
+        <li class="text-muted"><%= link_to '|' , "javascript:void(0)"%></li>
         <li><%= link_to '<i class= "mdi-action-highlight-remove"></i>'.html_safe, logout_path, method: "delete", style: "color: black;"%></i></li>
-        <li><%= link_to ' ' , "javascript:void(0)"%></li>
+        <li class="text-muted"><%= link_to '|' , "javascript:void(0)"%></li>
       </ul>
     </div>
 
