@@ -1,7 +1,7 @@
 <% if logged_in? %>
 <p id="notice"><%= notice %></p>
 
-<h1 style="color: white;">Places</h1>
+<h1 style="color: white;"><%= Mood.find(params[:id]).name %></h1>
 
 
 <% @places.each do |place| %>
