@@ -8,7 +8,7 @@
     <div class="jumbotron">
 
       <p>
-        <h4><%= @place.name %></h4>
+        <h4 style="text-align:center"><%= @place.name %></h4>
       </p>
 
       <p>
@@ -54,7 +54,7 @@
     <div class="jumbotron">
 
       <p>
-        <h4><%= @place.name %></h4>
+        <h3 style="text-align:center"><%= @place.name %></h3>
       </p>
 
       <p>
@@ -86,10 +86,21 @@
         <%= @place.category.name %>
       </p>
 
-      <%= link_to "favorite",   favorites_path(@place), method: :post%>
-      <% if @place.liked_by?(current_user.id)%>
-        <%= link_to "unfavorite", favorite_place_path(@place,
+      <p>
+        <i class="mdi-communication-live-help"></i>
+        <%= @place.tips %>
+      </p>
+
+
+      <% if !@place.liked_by?(current_user.id) %>
+      <div class="favorito">
+      <%= link_to '<p><i class= "mdi-action-stars"></i>Agregar a favoritos</p>'.html_safe,   favorites_path(@place), method: :post%>
+      </div>
+      <% elsif @place.liked_by?(current_user.id)%>
+
+        <%= link_to '<p><i class= "mdi-av-not-interested"></i>Borrar de favoritos</p>'.html_safe, favorite_place_path(@place,
           current_user.favorite_places.find_by(place_id: @place.id).id), method: :delete %>
+
       <% end %>
 
     </div>

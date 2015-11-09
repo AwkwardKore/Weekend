@@ -1,34 +1,35 @@
 <% provide(:title, "Log in") %>
 <div class="row">
-  <h1 class="col-md-6 col-md-offset-3" style="color: white;">User login</h1>
+  <h1 class="col-md-6 col-md-offset-3" style="color: white;">Inicia sesión</h1>
 </div>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="jumbotron">
+
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
-
+      
       <%= form_for(:session, url: login_path) do |f| %>
         <div class="field form-group">
           <div class="form-control-wrapper">
             <%= f.text_field :user, class: "form-control", autocomplete: "off",
-            pattern: ".+", "required placeholder": "User" %>
-            <label tabIndex="-1">User</label>
+            pattern: ".+", "required placeholder": "Usuario" %>
+            <label tabIndex="-1">Contraseña</label>
           </div>
         </div>
 
         <div class="field form-group">
           <div class="form-control-wrapper">
             <%= f.password_field :password , class: "form-control", autocomplete: "off",
-            pattern: ".+", "required placeholder": "Password" %>
-            <label tabIndex="-1">Password</label>
+            pattern: ".+", "required placeholder": "Contraseña" %>
+            <label tabIndex="-1">Contraseña</label>
           </div>
         </div>
 
         <div class="actions text-center">
-          <%= f.submit "Login", :class => "btn btn-success"%>
+          <%= f.submit "Iniciar sesion", :class => "btn btn-success"%>
         </div>
 
       <% end %>

@@ -15,4 +15,7 @@ class WelcomeController < ApplicationController
     @random = Place.order("RANDOM()").limit(3)
   end
 
+  def start
+  end
+
 end

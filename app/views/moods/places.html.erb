@@ -1,17 +1,24 @@
 <% if logged_in? %>
 <p id="notice"><%= notice %></p>
 
-<h1 style="color: white;"><%= Mood.find(params[:id]).name %></h1>
 
+<div class="row">
+  <%= link_to "<button class='btn btn-primary btn-raised'>Volver a lugares</button></p>".html_safe, places_path %>
+  <h1 style="color: white;"><%= Mood.find(params[:id]).name %></h1>
+</div>
 
 <% @places.each do |place| %>
   <div>
       <div class="col-md-2">
         <div class="jumbotron" style="text-align: center;">
+          <p>
+          </p>
           <%= link_to image_tag(place.image, class: "mini-image", :border => 0), place %>
           <p><%= place.name %></p>
         </div>
       </div>
   </div>
   <% end %>
+
+
 <% end %>

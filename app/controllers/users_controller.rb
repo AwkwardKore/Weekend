@@ -14,9 +14,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-     redirect_to @user
+     redirect_to(:home, alert: "El usuario se ha agregado correctamente")
     else
-      render 'new'
+      if @user.password.eql?(@user.password_confirmation)
+        redirect_to({action: "new"}, alert: "Favor de ingresar un correo electrónico válido")
+      else
+        redirect_to({action: "new"}, alert: "Las contraseñas no coinciden")
+      end
     end
   end
 
