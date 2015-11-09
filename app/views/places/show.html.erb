@@ -93,17 +93,23 @@
 
 
       <% if !@place.liked_by?(current_user.id) %>
-      <div class="favorito">
-      <%= link_to '<p><i class= "mdi-action-stars"></i>Agregar a favoritos</p>'.html_safe,   favorites_path(@place), method: :post%>
-      </div>
+        <div class="favorito">
+          <%= link_to '<p><i class= "mdi-action-stars"></i>Agregar a favoritos</p>'.html_safe,   favorites_path(@place), method: :post%>
+        </div>
       <% elsif @place.liked_by?(current_user.id)%>
-
         <%= link_to '<p><i class= "mdi-av-not-interested"></i>Borrar de favoritos</p>'.html_safe, favorite_place_path(@place,
           current_user.favorite_places.find_by(place_id: @place.id).id), method: :delete %>
-
       <% end %>
 
     </div>
+  </div>
+  <div class="col-md-3" style="top:30px;">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-dismissable alert-info">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <%= message %>
+      </div>
+    <% end %>
   </div>
 </div>
 

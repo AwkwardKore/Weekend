@@ -32,12 +32,11 @@
         <li class="rayita"><%= link_to '|' , "javascript:void(0)"%></li>
         <li><%= link_to 'Acerca del proyecto', :aboutproject %></li>
         <li class="rayita"><%= link_to '|' , "javascript:void(0)"%></li>
-        <li class="move"><i class="mdi-action-account-circle"></i><%= current_user.name %></li>
-        <li class="rayita"><%= link_to '|' , "javascript:void(0)"%></li>
         <li><%= link_to 'Favoritos', places_user_path(current_user.id)%></li>
         <li class="rayita"><%= link_to '|' , "javascript:void(0)"%></li>
-        <li><%= link_to '<i class= "mdi-action-highlight-remove"></i>'.html_safe, logout_path, method: "delete"%></i></li>
+        <li class="move"><i class="mdi-action-account-circle"></i><%= current_user.name %></li>
         <li class="rayita"><%= link_to '|' , "javascript:void(0)"%></li>
+        <li style="right: 10px;"><%= link_to '<i class= "mdi-action-highlight-remove"></i>'.html_safe, logout_path, method: "delete"%></i></li>
       </ul>
   </div>
 </div>
