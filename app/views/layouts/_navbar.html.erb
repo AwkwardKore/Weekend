@@ -26,7 +26,6 @@
     <%= link_to "#{image_tag('/logoweekend4_36px.png')}".html_safe,:bienvenido, :class=>"navbar-brand" %>
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
-
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Nosotros' , :aboutus %></li>
         <li class="rayita"><%= link_to '|' , "javascript:void(0)"%></li>
@@ -47,6 +46,7 @@
   <div class="navbar-header">
     <%= link_to "#{image_tag('/logoweekend4_36px.png')}".html_safe,:home, :class=>"navbar-brand" %>
   </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav navbar-right">
       <li><%= link_to 'Nosotros' , :aboutus %></li>
       <li><%= link_to '|' , "javascript:void(0)"%></li>
@@ -55,7 +55,7 @@
       <li><%= link_to 'Iniciar sesión' , login_path %></li>
       <li><%= link_to '|' , "javascript:void(0)"%></li>
       <li><%= link_to 'Registrarse' , new_user_path %></li>
-      <li><%= link_to ' ' , "javascript:void(0)"%></li>
     </ul>
+  </div>
 </div>
 <% end %>

@@ -8,7 +8,7 @@
 <% @places.each do |place| %>
   <div>
       <div class="col-md-2">
-        <div class="jumbotron" style="text-align: center;">
+        <div class="jumbotron arreglar" style="text-align: center;">
           <%= link_to image_tag(place.image, class: "mini-image", :border => 0), place %>
           <p><%= place.name %></p>
           <%=link_to 'Test', places_category_path(place.category_id)%>
@@ -34,7 +34,7 @@
 <% @places.each do |place| %>
   <div>
       <div class="col-md-2">
-        <div class="jumbotron" style="text-align: center;">
+        <div class="jumbotron arreglar" style="text-align: center;">
           <%= link_to image_tag(place.image, class: "mini-image", :border => 0), place %>
           <p><%= place.name %></p>
         </div>

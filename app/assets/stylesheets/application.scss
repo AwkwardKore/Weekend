@@ -6,6 +6,8 @@
 body {
   background-image: url("background.jpg");
   background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .footer2 {
@@ -19,4 +21,8 @@ body {
 
 .rayita{
   color: #B6B6B6;
+}
+
+.arreglar{
+  height:183px;
 }
